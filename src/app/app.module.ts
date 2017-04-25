@@ -23,7 +23,7 @@ import { UnderComponent } from './under/under.component';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
   ],
   exports: [MaterialModule],
   providers: [],
