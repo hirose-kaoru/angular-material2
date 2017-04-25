@@ -1,3 +1,53 @@
-<p>
-  under works!
-</p>
+<md-card>
+  <h2>Menu</h2>
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>more_mert</md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item>
+      <md-icon>dialpad</md-icon>
+      <span>Redial</span>
+    </button>
+    <button md-menu-item disabled>
+      <md-icon>voicemail</md-icon>
+      <span>Check Voicemail</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>notifications_off</md-icon>
+      <span>Disable alerts</span>
+    </button>
+  </md-menu>
+</md-card><br>
+
+<md-card>
+  <h2>Toolbar</h2>
+  <md-toolbar color="primary">
+    <span>Custom Toolbar</span>
+
+    <md-toolbar-row>
+      <span>Second Line</span>
+      <span class="example-spacer"></span>
+      <md-icon class="example-icon">verified_user</md-icon>
+    </md-toolbar-row>
+
+    <md-toolbar-row>
+      <span>Third Line</span>
+      <span class="example-spacer"></span>
+      <md-icon class="exapmle-icon">favorite</md-icon>
+      <md-icon class="example-icon">delete</md-icon>
+    </md-toolbar-row>
+  </md-toolbar>
+</md-card><br>
+
+<md-card>
+  <h2>Grid list</h2>
+  <md-grid-list cols="4" rowHeight="100px">
+    <md-grid-tile *ngFor="let tile of tiles"
+                   [colspan]="tile.cols"
+                   [rowspan]="tile.rows"
+                   [style.background]="tile.color">
+      {{tile.text}}
+    </md-grid-tile>
+  </md-grid-list>
+</md-card><br>
+
