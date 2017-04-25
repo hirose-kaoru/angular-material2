@@ -22,7 +22,7 @@
     <button  md-button>Flat</button>
     <button color="primary" md-raised-button>Primary</button>
     <button color="accent" md-raised-button>Accent</button>
-    <button color="warm" md-raised-button>Warm</button>
+    <button color="warn" md-raised-button>Warn</button>
     <button md-fab><md-icon>check</md-icon></button>
     <button md-mini-fab><md-icon>check</md-icon></button>
   </section>
@@ -35,6 +35,55 @@
       <input mdInput placeholder="名前を入力">
     </md-input-container>
   </form>
+</md-card><br>
+
+<md-card>
+  <h2 class="example-h2">Progress spinner</h2>
+  <md-card-content>
+
+    <section class="example-sectin">
+      <label class="example-margin">Color:</label>
+      <md-radio-group [(ngModel)]="color">
+        <md-radio-button class="example-margin" value="primary">
+          Primary
+        </md-radio-button>
+        <md-radio-button class="example-margin" value="accent">
+          Accent
+        </md-radio-button>
+        <md-radio-button class="example-margin" value="warn">
+          Warn
+        </md-radio-button>
+      </md-radio-group>
+    </section>
+
+    <section class="example-sectin">
+      <label class="example-margin">Mode:</label>
+      <md-radio-group [(ngModel)]="mode">
+        <md-radio-button class="example-margin" value="determinate">
+          Determinate
+        </md-radio-button>
+        <md-radio-button class="example-margin" value="indeterminate">
+          Indeterminate
+        </md-radio-button>
+      </md-radio-group>
+    </section>
+
+    <section class="example-sectin" *ngIf="mode == 'determinate'">
+      <label class="example-margin">Progress:</label>
+      <md-slider class="example-margin" [(ngModel)]="value"></md-slider>
+    </section>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <md-progress-spinner class="example-margin"
+                         [attr.color]="color"
+                         [mode]="mode"
+                         [value]="value">
+    </md-progress-spinner>
+  </md-card-content>
 </md-card><br>
 
   

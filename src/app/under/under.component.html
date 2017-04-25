@@ -51,3 +51,32 @@
   </md-grid-list>
 </md-card><br>
 
+<md-card class="example-card">
+  <h2>Card</h2>
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>ハリネズミ</md-card-title>
+    <md-card-subtitle>Hedgehog</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="../../assets/img/harinezumi.jpeg">
+  <md-card-content>
+    <p>
+      広義には、ハリネズミ科に属するすべての動物、すなわちジムヌラ亜科（英語版）、
+      ハリネズミ亜科の両方の生物群を指すが、ふつうは針毛をもたない（あるいはほとんどもたない）
+      ジムヌラ類を除いて、ハリネズミ亜科のもののみを指すことが多い。本項でも、ジムヌラ類を除く
+      ハリネズミ類について記す。ハリネズミ亜科では、現生のものとしては5属16種が知られている。
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button><md-icon>home</md-icon></button>
+    <button md-button>シェア</button>
+  </md-card-actions>
+</md-card><br>
+
+<md-card>
+  <md-chip-list class="mat-chip-list-stacked">
+    <md-chip *ngFor="let chipColor of availableColors" selected="true" color="{{chipColor.color}}">
+      {{chipColor.name}}
+    </md-chip>
+  </md-chip-list>
+</md-card>

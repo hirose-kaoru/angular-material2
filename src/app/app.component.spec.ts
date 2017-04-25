@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MaterialModule } from '@angular/material'
 
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';

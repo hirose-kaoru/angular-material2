@@ -13,6 +13,15 @@ export class UnderComponent implements OnInit {
     {text: '4番目', cols: 2, rows: 1, color: '#ddbdf1'},
   ]
 
+  color: string;
+  availableColors = [
+    {name: 'none', color: ''},
+    {name: 'Primary', color: 'primary'},
+    {name: 'Accent', color: 'accent'},
+    {name: 'Warn', color: 'warn'},
+  ]
+
+
   constructor() { }
 
   ngOnInit() {
