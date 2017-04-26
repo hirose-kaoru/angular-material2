@@ -1,6 +1,6 @@
 <!--ツールバー-->
 <md-toolbar color="primary">
-  <span>Angular Material</span>
+  <span>サンプルエレメント</span>
   <span class="spacer"></span>
   <!--メニューボタン-->
   <button md-icon-button [mdMenuTriggerFor]="menu">
@@ -22,128 +22,82 @@
     </button>
   </md-menu>
 </md-toolbar>
+
 <!--タブメニュー-->
 <md-tab-group>
-  <md-tab label="Gallery">
-    <md-card *ngFor="let spaceScreen of spaceScreens; let i = index;">
-      <img md-card-image src="{{spaceScreen.img}}" style="width: 500px; height: 300px;">
-      <md-card-content>
-        <p>{{spaceScreen.description}}</p>
-      </md-card-content>
-      <md-card-actions>
-        <button md-button (click)="likeMe(i)">
-          <i class="material-icons md-18" [class.red-color]="spaceScreen.liked == '1'">favorite</i>LIKE
-        </button>
-        <button md-button (click)="deleteMe(i)">
-          <i class="material-icons md-18">delete</i>DELETE
-        </button>
-      </md-card-actions>
+  <md-tab label="Checkbox">
+    <md-card>
+      <h2>Checkbox</h2>
+      <section>
+        <md-checkbox>チェック①</md-checkbox>
+        <md-checkbox>チェック②</md-checkbox>
+        <md-checkbox>チェック③</md-checkbox>
+      </section>
     </md-card>
   </md-tab>
 
-  <md-tab label="Settings">
-    <div id="page-padding">
-      <h1>Settings</h1>
-      <p>Here you can control the various settings associated with your app. There's no need to hit a save button, as the values are updated automatically.</p>
-      <label>Number of Thumbnails</label>
-      <md-slider showTicks="true"
-                max="100"
-                min="0"
-                step="1"
-                thumbLabel="true"
-                value="18">
-      </md-slider>
-      <md-slide-toggle>Some setting</md-slide-toggle>
-    </div>
+  <md-tab label="RadioButton">
+    <md-card>
+      <h2>RadioButton</h2>
+      <section>
+        <md-radio-group>
+          <md-radio-button value="start">start</md-radio-button>
+          <md-radio-button value="end">end</md-radio-button>
+        </md-radio-group>
+      </section>
+    </md-card>    
+  </md-tab>
+
+  <md-tab label="Button">
+    <md-card>
+      <h2>Button</h2>
+      <section>
+        <button  md-button>Flat</button>
+        <button color="primary" md-raised-button>Primary</button>
+        <button color="accent" md-raised-button>Accent</button>
+        <button color="warn" md-raised-button>Warn</button>
+        <button md-fab><md-icon>check</md-icon></button>
+        <button md-mini-fab><md-icon>check</md-icon></button>
+      </section>
+    </md-card>
+  </md-tab>
+
+  <md-tab label="Input">
+    <md-card>
+      <h2>Input</h2>
+      <form>
+        <md-input-container>
+          <input mdInput placeholder="名前を入力">
+        </md-input-container>
+      </form>
+    </md-card>
+  </md-tab>
+
+  <md-tab label="SelectBox">
+    <md-card>
+      <h2>SelectBox</h2>
+      <form>
+        <md-select placeholder="人気の食べ物" [(ngModel)]="selectedValue" name="food">
+          <md-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </md-option>
+        </md-select>
+      </form>
+    </md-card>
+  </md-tab>
+
+  <md-tab label="SlideToggle">
+    <md-card>
+      <h2>SlideToggle</h2>
+      <section>
+        <md-slide-toggle color="primary">
+          Slide me!
+        </md-slide-toggle>
+      </section>
+    </md-card>        
   </md-tab>
 </md-tab-group>
 
-<md-card>
-  <h2>Checkbox</h2>
-  <section>
-    <md-checkbox>Checked</md-checkbox>
-    <md-checkbox>Indeterminate</md-checkbox>
-  </section>
-</md-card><br>
 
-<md-card>
-  <h2>RadioButton</h2>
-  <section>
-    <md-radio-group>
-      <md-radio-button value="start">start</md-radio-button>
-      <md-radio-button value="end">end</md-radio-button>
-    </md-radio-group>
-  </section>
-</md-card><br>
-
-<md-card>
-  <h2>Button</h2>
-  <section>
-    <button  md-button>Flat</button>
-    <button color="primary" md-raised-button>Primary</button>
-    <button color="accent" md-raised-button>Accent</button>
-    <button color="warn" md-raised-button>Warn</button>
-    <button md-fab><md-icon>check</md-icon></button>
-    <button md-mini-fab><md-icon>check</md-icon></button>
-  </section>
-</md-card><br>
-
-<md-card>
-  <h2>Input</h2>
-  <form>
-    <md-input-container>
-      <input mdInput placeholder="名前を入力">
-    </md-input-container>
-  </form>
-</md-card><br>
-
-<md-card>
-  <h2 class="example-h2">Progress spinner</h2>
-  <md-card-content>
-
-    <section class="example-sectin">
-      <label class="example-margin">Color:</label>
-      <md-radio-group [(ngModel)]="color">
-        <md-radio-button class="example-margin" value="primary">
-          Primary
-        </md-radio-button>
-        <md-radio-button class="example-margin" value="accent">
-          Accent
-        </md-radio-button>
-        <md-radio-button class="example-margin" value="warn">
-          Warn
-        </md-radio-button>
-      </md-radio-group>
-    </section>
-
-    <section class="example-sectin">
-      <label class="example-margin">Mode:</label>
-      <md-radio-group [(ngModel)]="mode">
-        <md-radio-button class="example-margin" value="determinate">
-          Determinate
-        </md-radio-button>
-        <md-radio-button class="example-margin" value="indeterminate">
-          Indeterminate
-        </md-radio-button>
-      </md-radio-group>
-    </section>
-
-    <section class="example-sectin" *ngIf="mode == 'determinate'">
-      <label class="example-margin">Progress:</label>
-      <md-slider class="example-margin" [(ngModel)]="value"></md-slider>
-    </section>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
-    <h2 class="example-h2">Result</h2>
-
-    <md-progress-spinner class="example-margin"
-                         [attr.color]="color"
-                         [mode]="mode"
-                         [value]="value">
-    </md-progress-spinner>
-  </md-card-content>
-</md-card><br>
 
   

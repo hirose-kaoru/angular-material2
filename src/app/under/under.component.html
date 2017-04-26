@@ -1,62 +1,47 @@
-<md-card>
-  <h2>Menu</h2>
-  <button md-icon-button [mdMenuTriggerFor]="menu">
-    <md-icon>more_mert</md-icon>
-  </button>
-  <md-menu #menu="mdMenu">
-    <button md-menu-item>
-      <md-icon>dialpad</md-icon>
-      <span>Redial</span>
-    </button>
-    <button md-menu-item disabled>
-      <md-icon>voicemail</md-icon>
-      <span>Check Voicemail</span>
-    </button>
-    <button md-menu-item>
-      <md-icon>notifications_off</md-icon>
-      <span>Disable alerts</span>
-    </button>
-  </md-menu>
-</md-card><br>
+<!--ツールバー-->
+<md-toolbar color="warn">
+  <span>サンプルエレメント3</span>
+</md-toolbar>
+<!--タブメニュー-->
+<md-tab-group>
+  <md-tab label="Card①">
+    <md-card *ngFor="let spaceScreen of spaceScreens; let i = index;">
+      <img md-card-image src="{{spaceScreen.img}}" style="width: 500px; height: 300px;">
+      <md-card-content>
+        <p>{{spaceScreen.description}}</p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="likeMe(i)">
+          <i class="material-icons md-18" [class.red-color]="spaceScreen.liked == '1'">favorite</i>LIKE
+        </button>
+        <button md-button (click)="deleteMe(i)">
+          <i class="material-icons md-18">delete</i>DELETE
+        </button>
+      </md-card-actions>
+    </md-card>
+  </md-tab>
 
-<md-card>
-  <h2>Grid list</h2>
-  <md-grid-list cols="4" rowHeight="100px">
-    <md-grid-tile *ngFor="let tile of tiles"
-                   [colspan]="tile.cols"
-                   [rowspan]="tile.rows"
-                   [style.background]="tile.color">
-      {{tile.text}}
-    </md-grid-tile>
-  </md-grid-list>
-</md-card><br>
+  <md-tab label="card②">
+    <md-card>
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>ハリネズミ</md-card-title>
+        <md-card-subtitle>Hedgehog</md-card-subtitle>
+      </md-card-header>
+      <img md-card-image src="../../assets/img/harinezumi.jpeg" style="width: 500px; height: 300px;">
+      <md-card-content>
+        <p>
+          広義には、ハリネズミ科に属するすべての動物、すなわちジムヌラ亜科（英語版）、
+          ハリネズミ亜科の両方の生物群を指すが、ふつうは針毛をもたない（あるいはほとんどもたない）
+          ジムヌラ類を除いて、ハリネズミ亜科のもののみを指すことが多い。本項でも、ジムヌラ類を除く
+          ハリネズミ類について記す。ハリネズミ亜科では、現生のものとしては5属16種が知られている。
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button><md-icon>home</md-icon></button>
+        <button md-button>シェア</button>
+      </md-card-actions>
+    </md-card>
+  </md-tab>
+</md-tab-group>
 
-<md-card class="example-card">
-  <h2>Card</h2>
-  <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>ハリネズミ</md-card-title>
-    <md-card-subtitle>Hedgehog</md-card-subtitle>
-  </md-card-header>
-  <img md-card-image src="../../assets/img/harinezumi.jpeg">
-  <md-card-content>
-    <p>
-      広義には、ハリネズミ科に属するすべての動物、すなわちジムヌラ亜科（英語版）、
-      ハリネズミ亜科の両方の生物群を指すが、ふつうは針毛をもたない（あるいはほとんどもたない）
-      ジムヌラ類を除いて、ハリネズミ亜科のもののみを指すことが多い。本項でも、ジムヌラ類を除く
-      ハリネズミ類について記す。ハリネズミ亜科では、現生のものとしては5属16種が知られている。
-    </p>
-  </md-card-content>
-  <md-card-actions>
-    <button md-button><md-icon>home</md-icon></button>
-    <button md-button>シェア</button>
-  </md-card-actions>
-</md-card><br>
-
-<md-card>
-  <md-chip-list class="mat-chip-list-stacked">
-    <md-chip *ngFor="let chipColor of availableColors" selected="true" color="{{chipColor.color}}">
-      {{chipColor.name}}
-    </md-chip>
-  </md-chip-list>
-</md-card>

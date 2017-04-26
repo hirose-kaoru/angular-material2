@@ -1,4 +1,30 @@
 {
+  "foods": [
+      {
+        "value": "お寿司",
+        "viewValue": "お寿司"
+      },
+      {
+        "value": "ラーメン", 
+        "viewValue": "ラーメン"
+      },
+      {
+        "value": "ステーキ", 
+        "viewValue": "ステーキ"
+      },
+      {
+        "value": "焼肉", 
+        "viewValue": "焼肉"
+      },
+      {
+        "value": "しゃぶしゃぶ", 
+        "viewValue": "しゃぶしゃぶ"
+      },
+      {
+        "value": "つけ麺", 
+        "viewValue": "つけ麺"
+      }
+  ],
   "screenshots": [
       {
         "img": "assets/img/kurage.jpg",
