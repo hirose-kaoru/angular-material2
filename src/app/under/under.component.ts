@@ -30,7 +30,6 @@ export class UnderComponent implements OnInit {
 
   deleteMe(i) {
     this.spaceScreens.splice(i, 1);
-    console.log(i);
   }
 
 }

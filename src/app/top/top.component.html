@@ -25,6 +25,7 @@
 
 <!--タブメニュー-->
 <md-tab-group>
+  <!--チェックボックス-->
   <md-tab label="Checkbox">
     <md-card>
       <h2>Checkbox</h2>
@@ -36,6 +37,7 @@
     </md-card>
   </md-tab>
 
+  <!--ラジオボタン-->
   <md-tab label="RadioButton">
     <md-card>
       <h2>RadioButton</h2>
@@ -48,11 +50,12 @@
     </md-card>    
   </md-tab>
 
+  <!--ボタン-->
   <md-tab label="Button">
     <md-card>
       <h2>Button</h2>
       <section>
-        <button  md-button>Flat</button>
+        <button  md-button color="primary">Flat</button>
         <button color="primary" md-raised-button>Primary</button>
         <button color="accent" md-raised-button>Accent</button>
         <button color="warn" md-raised-button>Warn</button>
@@ -62,6 +65,7 @@
     </md-card>
   </md-tab>
 
+  <!--インプット-->
   <md-tab label="Input">
     <md-card>
       <h2>Input</h2>
@@ -73,6 +77,7 @@
     </md-card>
   </md-tab>
 
+  <!--セレクトボックス-->
   <md-tab label="SelectBox">
     <md-card>
       <h2>SelectBox</h2>
@@ -86,6 +91,7 @@
     </md-card>
   </md-tab>
 
+  <!--スライドトグル-->
   <md-tab label="SlideToggle">
     <md-card>
       <h2>SlideToggle</h2>
@@ -93,6 +99,16 @@
         <md-slide-toggle color="primary">
           Slide me!
         </md-slide-toggle>
+      </section>
+    </md-card>        
+  </md-tab>
+
+  <!--ダイアログ-->
+  <md-tab label="Dialog">
+    <md-card>
+      <h2>Dialog</h2>
+      <section>
+        <button md-button color="warn" md-raised-button (click)="openDialog()">開くよ</button>
       </section>
     </md-card>        
   </md-tab>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MdSnackBar } from '@angular/material'
+import { SnackbarComponent } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-middle',
@@ -18,9 +20,15 @@ export class MiddleComponent implements OnInit {
     {name: 'Warn', color: 'warn'},
   ]
 
-  constructor() { }
+  constructor(public snackBar: MdSnackBar, public snackbarComponent: MdSnackBar) { }
 
   ngOnInit() {
+  }
+
+  openSnackBar() {
+    this.snackbarComponent.openFromComponent(SnackbarComponent, {
+      duration: 2000,
+    });
   }
 
 }

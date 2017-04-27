@@ -4,6 +4,7 @@
 </md-toolbar>
 <!--タブメニュー-->
 <md-tab-group>
+  <!--カード-->
   <md-tab label="Card①">
     <md-card *ngFor="let spaceScreen of spaceScreens; let i = index;">
       <img md-card-image src="{{spaceScreen.img}}" style="width: 500px; height: 300px;">
@@ -21,6 +22,7 @@
     </md-card>
   </md-tab>
 
+  <!--カード-->
   <md-tab label="card②">
     <md-card>
       <md-card-header>

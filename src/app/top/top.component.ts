@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http'
+import { Http } from '@angular/http';
+import { MdDialog } from '@angular/material';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-top',
@@ -10,7 +12,7 @@ export class TopComponent implements OnInit {
   selectedValue: string;
   foods: Array<any>;
   
-  constructor(private http: Http) {
+  constructor(private http: Http, public dialog: MdDialog) {
     this.http.get('./src/data.json')
              .map(response => response.json().foods)
              .subscribe(res => this.foods = res);
@@ -18,6 +20,10 @@ export class TopComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  openDialog() {
+    this.dialog.open(DialogComponent);
   }
 
 }
