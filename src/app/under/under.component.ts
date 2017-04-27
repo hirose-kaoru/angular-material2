@@ -14,7 +14,7 @@ export class UnderComponent implements OnInit {
   constructor(private http: Http) { 
     this.http.get('./src/data.json')
              .map(response => response.json())
-             .subscribe(res => {this.spaceScreens = res.screenshots; console.log(res)});
+             .subscribe(res => this.spaceScreens = res.screenshots);
   }
 
   ngOnInit() {

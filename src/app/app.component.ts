@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  scroll() {
+    window.scrollTo(100, 100);
+    console.log('飛べ');
+  }
   
 }

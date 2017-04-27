@@ -1,118 +1,148 @@
-<!--ツールバー-->
-<md-toolbar color="primary">
-  <span>サンプルエレメント</span>
-  <span class="spacer"></span>
-  <!--メニューボタン-->
-  <button md-icon-button [mdMenuTriggerFor]="menu">
-    <md-icon>more_vert</md-icon>
-  </button>
-  <!--メニュー中身-->
-  <md-menu #menu="mdMenu">
-    <button md-menu-item>
-      <md-icon>fingerprint</md-icon>
-      <span>ログイン</span>
+<!--サイドバーコンテナー-->
+<md-sidenav-container fullscreen>
+  <!--サイドバー-->
+  <md-sidenav #sidenav mode="side">
+    <md-toolbar>
+      <span>サイドメニュー</span>
+    </md-toolbar>
+    <!--リスト-->
+    <md-list>
+      <h3 md-subheader>Folders</h3>
+      <md-list-item *ngFor="let folder of folders">
+        <md-icon md-list-icon>folder</md-icon>
+        <h4 md-line>{{folder.name}}</h4>
+        <p md-line> {{folder.updated | date}} </p>
+      </md-list-item>
+      <md-divider></md-divider>
+      <h3 md-subheader>Notes</h3>
+      <md-list-item *ngFor="let note of notes">
+        <md-icon md-list-icon>note</md-icon>
+        <h4 md-line>{{note.name}}</h4>
+        <p md-line> {{note.updated | date}} </p>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <!--ツールバー-->
+  <md-toolbar color="primary">
+    <button md-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
     </button>
-    <button md-menu-item disabled>
-      <md-icon>announcement</md-icon>
-      <span>問題</span>
+    <span>サンプルエレメント</span>
+    <span class="spacer"></span>
+    <!--メニューボタン-->
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
     </button>
-    <button md-menu-item>
-      <md-icon>notifications_off</md-icon>
-      <span>アラートを無効</span>
-    </button>
-  </md-menu>
-</md-toolbar>
+    <!--メニュー中身-->
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>fingerprint</md-icon>
+        <span>ログイン</span>
+      </button>
+      <button md-menu-item disabled>
+        <md-icon>announcement</md-icon>
+        <span>問題</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>notifications_off</md-icon>
+        <span>アラートを無効</span>
+      </button>
+    </md-menu>
+  </md-toolbar>
+  <!--タブメニュー-->
+  <md-tab-group>
+    <!--チェックボックス-->
+    <md-tab label="Checkbox">
+      <md-card>
+        <h2>Checkbox</h2>
+        <section>
+          <md-checkbox>チェック①</md-checkbox>
+          <md-checkbox>チェック②</md-checkbox>
+          <md-checkbox>チェック③</md-checkbox>
+        </section>
+      </md-card>
+    </md-tab>
 
-<!--タブメニュー-->
-<md-tab-group>
-  <!--チェックボックス-->
-  <md-tab label="Checkbox">
-    <md-card>
-      <h2>Checkbox</h2>
-      <section>
-        <md-checkbox>チェック①</md-checkbox>
-        <md-checkbox>チェック②</md-checkbox>
-        <md-checkbox>チェック③</md-checkbox>
-      </section>
-    </md-card>
-  </md-tab>
+    <!--ラジオボタン-->
+    <md-tab label="RadioButton">
+      <md-card>
+        <h2>RadioButton</h2>
+        <section>
+          <md-radio-group>
+            <md-radio-button value="start">start</md-radio-button>
+            <md-radio-button value="end">end</md-radio-button>
+          </md-radio-group>
+        </section>
+      </md-card>    
+    </md-tab>
 
-  <!--ラジオボタン-->
-  <md-tab label="RadioButton">
-    <md-card>
-      <h2>RadioButton</h2>
-      <section>
-        <md-radio-group>
-          <md-radio-button value="start">start</md-radio-button>
-          <md-radio-button value="end">end</md-radio-button>
-        </md-radio-group>
-      </section>
-    </md-card>    
-  </md-tab>
+    <!--ボタン-->
+    <md-tab label="Button">
+      <md-card>
+        <h2>Button</h2>
+        <section>
+          <button  md-button color="primary">Flat</button>
+          <button color="primary" md-raised-button>Primary</button>
+          <button color="accent" md-raised-button>Accent</button>
+          <button color="warn" md-raised-button>Warn</button>
+          <button md-fab><md-icon>check</md-icon></button>
+          <button md-mini-fab><md-icon>check</md-icon></button>
+        </section>
+      </md-card>
+    </md-tab>
 
-  <!--ボタン-->
-  <md-tab label="Button">
-    <md-card>
-      <h2>Button</h2>
-      <section>
-        <button  md-button color="primary">Flat</button>
-        <button color="primary" md-raised-button>Primary</button>
-        <button color="accent" md-raised-button>Accent</button>
-        <button color="warn" md-raised-button>Warn</button>
-        <button md-fab><md-icon>check</md-icon></button>
-        <button md-mini-fab><md-icon>check</md-icon></button>
-      </section>
-    </md-card>
-  </md-tab>
+    <!--インプット-->
+    <md-tab label="Input">
+      <md-card>
+        <h2>Input</h2>
+        <form>
+          <md-input-container>
+            <input mdInput placeholder="名前を入力">
+          </md-input-container>
+        </form>
+      </md-card>
+    </md-tab>
 
-  <!--インプット-->
-  <md-tab label="Input">
-    <md-card>
-      <h2>Input</h2>
-      <form>
-        <md-input-container>
-          <input mdInput placeholder="名前を入力">
-        </md-input-container>
-      </form>
-    </md-card>
-  </md-tab>
+    <!--セレクトボックス-->
+    <md-tab label="SelectBox">
+      <md-card>
+        <h2>SelectBox</h2>
+        <form>
+          <md-select placeholder="人気の食べ物" [(ngModel)]="selectedValue" name="food">
+            <md-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </md-option>
+          </md-select>
+        </form>
+      </md-card>
+    </md-tab>
 
-  <!--セレクトボックス-->
-  <md-tab label="SelectBox">
-    <md-card>
-      <h2>SelectBox</h2>
-      <form>
-        <md-select placeholder="人気の食べ物" [(ngModel)]="selectedValue" name="food">
-          <md-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-          </md-option>
-        </md-select>
-      </form>
-    </md-card>
-  </md-tab>
+    <!--スライドトグル-->
+    <md-tab label="SlideToggle">
+      <md-card>
+        <h2>SlideToggle</h2>
+        <section>
+          <md-slide-toggle color="primary">
+            Slide me!
+          </md-slide-toggle>
+        </section>
+      </md-card>        
+    </md-tab>
 
-  <!--スライドトグル-->
-  <md-tab label="SlideToggle">
-    <md-card>
-      <h2>SlideToggle</h2>
-      <section>
-        <md-slide-toggle color="primary">
-          Slide me!
-        </md-slide-toggle>
-      </section>
-    </md-card>        
-  </md-tab>
+    <!--ダイアログ-->
+    <md-tab label="Dialog">
+      <md-card>
+        <h2>Dialog</h2>
+        <section>
+          <button md-button color="warn" md-raised-button (click)="openDialog()">開くよ</button>
+        </section>
+      </md-card>        
+    </md-tab>
+  </md-tab-group>
+  <app-middle></app-middle>
+  <app-under></app-under>
+</md-sidenav-container>
 
-  <!--ダイアログ-->
-  <md-tab label="Dialog">
-    <md-card>
-      <h2>Dialog</h2>
-      <section>
-        <button md-button color="warn" md-raised-button (click)="openDialog()">開くよ</button>
-      </section>
-    </md-card>        
-  </md-tab>
-</md-tab-group>
 
 
 

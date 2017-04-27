@@ -7,7 +7,7 @@
   <!--カード-->
   <md-tab label="Card①">
     <md-card *ngFor="let spaceScreen of spaceScreens; let i = index;">
-      <img md-card-image src="{{spaceScreen.img}}" style="width: 500px; height: 300px;">
+      <img md-card-image src="{{spaceScreen.img}}" style="max-width: 50%; height: 300px;">
       <md-card-content>
         <p>{{spaceScreen.description}}</p>
       </md-card-content>
@@ -30,7 +30,7 @@
         <md-card-title>ハリネズミ</md-card-title>
         <md-card-subtitle>Hedgehog</md-card-subtitle>
       </md-card-header>
-      <img md-card-image src="../../assets/img/harinezumi.jpeg" style="width: 500px; height: 300px;">
+      <img md-card-image src="../../assets/img/harinezumi.jpeg" style="max-width: 50%; height: 300px;">
       <md-card-content>
         <p>
           広義には、ハリネズミ科に属するすべての動物、すなわちジムヌラ亜科（英語版）、
